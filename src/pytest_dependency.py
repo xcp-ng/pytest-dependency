@@ -94,7 +94,7 @@ class DependencyManager(object):
                     if self.results[i].hasFailure():
                         has_failure = True
             else:
-                logger.debug("... %s is unknown", i)
+                logger.debug("... %s is unknown (did you forget to mark it?)", i)
                 if _ignore_unknown:
                     continue
             if not has_failure and any(item.config.hook.pytest_dependency_override_skip(
